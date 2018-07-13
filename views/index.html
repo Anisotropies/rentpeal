@@ -1,51 +1,229 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Historial % Return</title>
-		<link rel="shortcut icon" href="images/favicon.ico">
-		<link type="text/css" rel="stylesheet" href="/homePage.css">
-		<script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
-		<!--<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-        <script type="text/javascript" language="javascript" src="/homePage.js"></script>
-        <script type="text/javascript" language="javascript" src="/testLeastSquares.js"></script>
+  <!DOCTYPE html>
+  <html lang="">
+  	<head>
+  		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<title>Rent Peal</title>
+  
+  		<!-- Bootstrap CSS -->
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  		<!-- Google Fonts -->
+  		<link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700' rel='stylesheet' type='text/css'>
+  		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  		<!-- Style -->
+  		<link href='../public/style.css' rel='stylesheet' type='text/css'>
+  
+  		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  		<!--[if lt IE 9]>
+  			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+  			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  		<![endif]-->
+  	</head>
+  	<body>
+  		<nav class="navbar navbar-default" role="navigation">
+  			<div class="container">
+  				<!-- Brand and toggle get grouped for better mobile display -->
+  				<div class="navbar-header">
+  					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+  						<span class="sr-only">Toggle navigation</span>
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  					</button>
+  					<a class="navbar-brand" href="index.html">Rent Peal</a>
+  				</div>
+  		
+  				<!-- Collect the nav links, forms, and other content for toggling -->
+  				<div class="collapse navbar-collapse navbar-ex1-collapse">
+  					<ul class="nav navbar-nav navbar-right">
+  						<li><a href="index.html">Home</a></li>
+  						<li><a href="#aboutUs">About Us</a></li>
+  						<li><a href="#how">How It Works</a></li>
+  						<li class="dropdown">
+  							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+  							<ul class="dropdown-menu">
+  								<li><a href="#">Own</a></li>
+  								<li><a href="#">Rent</a></li>
+  								<li><a href="#">Careers</a></li>
+  							</ul>
+  						</li>
+						<li><a href="signup.html">Sign Up</a></li>
+						<li><a href="signup.html">Login</a></li>
+  					</ul>
+  				</div><!-- /.navbar-collapse -->
+  			</div>
+  		</nav>
 		
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-		 
-		<!-- Include Date Range Picker -->
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.27/daterangepicker.js"></script>
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.27/daterangepicker.css" />
+		<!-- START SECTION -->
+  		<div class="section hero text-center background-dark dark-bg">
+  			<div class="background-image" style="background: url(../public/images/hero.jpg) no-repeat center center; background-size: cover; opacity: .2;"></div>
+  			<div class="container">
+  				<div class="row">
+  					<div class="col-md-12">
+  						<h2>Rent Peal</h2>
+  						<p class="lead">Who needs rent control when you control the rent?</p>
+  						<ul class="list-inline">
+  							<li><a href="#learnMore" title="Learn More" class="btn btn-md btn-info">Learn More</a></li>
+  							<li><a href="signup.html" title="Learn More" class="btn btn-md btn-primary">Sign Up</a></li>
+  						</ul>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  		<!--/.section -->
 
-		<!-- Include Font Awesome -->
-		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-		
-	</head>
-<body>
-<div class="Title content">
-	<h1>Historical % Return Stock Calculator</h1>
-</div>
-	<form id = "StartEndForm">
-	<div id = "tickerDiv" class = "content">Ticker Symbol <i class="fas fa-chart-line"></i> <input class = "FormText" id = "ticker" type="text" name="ticker" value="FB"><br></div>
-	<div class = "content">Date Range <i class="fa fa-calendar-alt"></i> <input class = "FormText" id = "dateRange" type="text" name="daterange"  value="01/01/2017 - 01/01/2018" /></div>
-	</form>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6"></div>
-			<div id = "submitButton" class="col-md-1 content">Submit</div>
-		</div>
-	</div>
-	<div id = "companyName" class = "content"></div>
-	<div id = "returnVal" class = "content"></div>
-	<div id="chartContainer"class = "content">
-	<canvas id="myChart"></canvas>
- </div>
+  		<!-- START SECTION -->
+  		<div class="section background-light">
+  			<div class="container" id = "learnMore">
+  				<div class="row">
+  					<div class="col-md-12 text-center">
+  						<h2 class="section-title">WHAT WE OFFER</h2>
+  						<p class="section-description">Free yourself from the shackles of outdated property ownership.</p>
+  					</div>
+  					<div class="col-md-4">
+  						<div class="service-block text-center">
+  							<i class="fa fa-home"></i>
+  							<h3>Own</h3>
+  							<p>Own shares in The Collective -- a group of real estate properties that all shareholders own. Owners help decide what rent costs.</p>
+  							<a href="#" title="Learn More" class="btn btn-sm btn-primary">Learn More</a>
+  						</div><!--/.service-block-->
+  					</div>
+  					<div class="col-md-4">
+  						<div class="service-block text-center">
+  							<i class="fa fa-hand-holding-usd"></i>
+  							<h3>Invest</h3>
+  							<p>Your shares can be bought and sold like normal stock. We even give dividends collected from rent. </p>
+  							<a href="#" title="Learn More" class="btn btn-sm btn-primary">Learn More</a>
+  						</div><!--/.service-block-->
+  					</div>
+  					<div class="col-md-4">
+  						<div class="service-block text-center">
+  							<i class="fa fa-rocket"></i>
+  							<h3>Rent</h3>
+  							<p>Rent from our properties. If you're an owner you get to control your rent!</p>
+  							<a href="#" title="Learn More" class="btn btn-sm btn-primary">Learn More</a>
+  						</div><!--/.service-block-->
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  		<!--/.section -->
 
-<div id = "citationQuandl" class = "content"></div>
+  		<!-- START SECTION -->
+  		<div class="section hero text-center background-primary dark-bg">
+  			<div class="background-image" style="background: url(..public/images/hero.jpg) no-repeat fixed center center; background-size: cover; opacity: .2;"></div>
+  			<div class="container">
+  				<div class="row">
+  					<div class="col-md-12">
+  						<h3 class="text-uppercase letter-spacing-md font-weight-lg margin-zero">"Why should the 1% get to own property when the 99% have to fight to get a place to even rent?" -- Joe Somebody</h3>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  		<!--/.section -->
 
+  		<!-- START SECTION -->
+  		<div class="section">
+  			<div class="container" id ="how">
+  				<div class="row">
+  					<div class="col-md-12 text-center">
+  						<h2 class="section-title">How it Works</h2>
+  						<p class="section-description">How do we democratize housing</p>
+  					</div>
+  					<div class="col-md-4">
+  						<div class="entry">
+  							<div class="entry-media">
+  								<a href="#" title="">
+  									<span class="absolute-wrapper"></span>
+  									<img src="images/blog1.jpg" alt="" class="img-responsive" />
+  								</a>
+  							</div>
+  							<h3 class="entry-title"><a href="#" title="The Collective">The Collective </a></h3>
+  							<p>The Collective pools money together.</p>
+  							<a href="#" title="Learn More" class="btn read-more btn-sm btn-primary">Learn More</a>
+  						</div><!--/.entry-->
+  					</div>
+  					<div class="col-md-4">
+  						<div class="entry">
+  							<div class="entry-media">
+  								<a href="#" title="">
+  									<span class="absolute-wrapper"></span>
+  									<img src="images/blog2.jpg" alt="" class="img-responsive" />
+  								</a>
+  							</div>
+  							<h3 class="entry-title"><a href="#" title="We buy the property">We buy the property</a></h3>
+  							<p>Rent Peal uses that pool to buy properties across the country.</p>
+  							<a href="#" title="Learn More" class="btn read-more btn-sm btn-primary">Learn More</a>
+  						</div><!--/.entry-->
+  					</div>
+  					<div class="col-md-4">
+  						<div class="entry">
+  							<div class="entry-media">
+  								<a href="#" title="">
+  									<span class="absolute-wrapper"></span>
+  									<img src="images/blog3.jpg" alt="" class="img-responsive" />
+  								</a>
+  							</div>
+  							<h3 class="entry-title"><a href="#" title="Owners help decide the rent">Owners help decide the rent</a></h3>
+  							<p>Control your own rent by being both a shareholder and a renter.</p>
+  							<a href="#" title="Learn More" class="btn read-more btn-sm btn-primary">Learn More</a>
+  						</div><!--/.entry-->
+  					</div>
+  				</div><!--/.row-->
+  			</div><!--/.container-->
+  		</div>
+  		<!--/.section -->
 
-</body>
-</html>
+  		<!-- START SECTION -->
+  		<div class="section hero text-center background-light">
+  			<div class="background-image" style="background: url(..public/images/hero.jpg) no-repeat fixed center center; background-size: cover; opacity: .2;"></div>
+  			<div class="container">
+  				<div class="row">
+  					<div class="col-md-12">
+  						<h3 class="text-uppercase letter-spacing-md font-weight-lg margin-zero">"Fintech rises in real estate." -- Jane Bigshot</h3>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  		<!--/.section -->
+
+  		<!-- START SECTION -->
+  		<div class="section background-dark dark-bg">
+  			<div class="container" id = "aboutUs">
+  				<div class="row">
+  					<div class="col-md-3">
+  						<h3 class="text-uppercase font-size-md letter-spacing-md font-weight-lg ">About Us</h3>
+  						<p>Rent Peal started in 2018 in a college dorm at UCLA.</p>
+  						<p>Legal Stuff XXXX</p>
+  					</div>
+  					<div class="col-md-4 col-md-offset-1">
+  						<h3 class="text-uppercase font-size-md letter-spacing-md font-weight-lg ">Office</h3>
+  						<address>
+							<strong>Rent Peal, Inc.</strong><br>
+						 	Wilshire Blvd.<br>
+						 	Los Angeles, CA 90024<br>
+						 	<abbr title="Phone">P:</abbr> (310) XXX-XXXX
+						</address>
+						<address>
+							<strong>Contact Us</strong><br>
+						 	<a href="mailto:#">rentpeal@example.com</a>
+						</address>
+  					</div>
+
+  					<div class="col-md-12 margin-top-md text-center font-size-sm text-upercase">
+  						<p>© <a href="" title="rentpeal"><strong>Rent Peal</strong></a>. Images: <a href="https://www.pexels.com/" title="pexels"><strong>Pexels</strong></a>. By: <a href="https://www.free-css.com/free-css-templates/page229/indigo" title="Free CSS"><strong>Free CSS</strong></a>.</p>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  		<!--/.section -->
+  
+  		<!-- jQuery -->
+  		<script src="//code.jquery.com/jquery.js"></script>
+  		<!-- Bootstrap JavaScript -->
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  	</body>
+  </html>
