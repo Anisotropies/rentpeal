@@ -265,6 +265,8 @@ a {
 	top: 0;
 	left: 0;
 	z-index: 0;
+	background-image: url('../public/images/hero.jpg') no-repeat center center; 
+	background-size: cover; opacity: .2;
 }
 
 h2.section-title {
@@ -287,6 +289,7 @@ h2.section-title + p {
 .hero {
 	padding-top: 200px;
 	padding-bottom: 200px;
+
 }
 .hero h2 {
 	font-size: 36px;
