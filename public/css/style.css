@@ -1,6 +1,7 @@
 body {
 	font-family: 'Poppins', sans-serif;
 	color: #2c3e50;
+	background-image: url('images/hero.jpg');
 }
 
 a {
