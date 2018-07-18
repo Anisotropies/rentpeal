@@ -12,6 +12,7 @@ var port = process.env.PORT || 8080;
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
+app.use(express.static('views'));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
