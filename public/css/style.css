@@ -266,6 +266,9 @@ a {
 	top: 0;
 	left: 0;
 	z-index: 0;
+	background-image: url('../images/hero.jpg') no-repeat center center; 
+	background-size: cover; 
+	opacity: .2;
 }
 
 h2.section-title {
