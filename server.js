@@ -41,7 +41,7 @@ app.post('/post-feedback', function (req, res) {
         delete req.body._id; // for safety reasons
         db.collection('feedbacks').insertOne(req.body);
     });
-   //res.send('Data received:\n' + JSON.stringify(req.body));
+   res.send('Data received:\n' + JSON.stringify(req.body));
 	res.end();
 });
 
